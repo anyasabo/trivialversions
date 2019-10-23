@@ -20,6 +20,7 @@ import (
 	"os"
 
 	batchv1 "github.com/elastic/trivialversions/api/v1"
+	batchv2 "github.com/elastic/trivialversions/api/v2"
 	"github.com/elastic/trivialversions/controllers"
 	"k8s.io/apimachinery/pkg/runtime"
 	clientgoscheme "k8s.io/client-go/kubernetes/scheme"
@@ -38,6 +39,7 @@ func init() {
 	_ = clientgoscheme.AddToScheme(scheme)
 
 	_ = batchv1.AddToScheme(scheme)
+	_ = batchv2.AddToScheme(scheme)
 	// +kubebuilder:scaffold:scheme
 }
 
